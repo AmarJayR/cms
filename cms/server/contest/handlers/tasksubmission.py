@@ -444,7 +444,7 @@ class SubmissionStatusHandler(ContestHandler):
         if data["status"] == SubmissionResult.COMPILING:
             data["status_text"] = self._("Compiling...")
         elif data["status"] == SubmissionResult.COMPILATION_FAILED:
-            data["status_text"] = "%s <a class=\"details\">%s</a>" % (
+            data["status_text"] = "%s <a class=\"details\" data-toggle=\"modal\" data-target=\"#submission_detail\">%s</a>" % (
                 self._("Compilation failed"), self._("details"))
         elif data["status"] == SubmissionResult.EVALUATING:
             data["status_text"] = self._("Evaluating...")
