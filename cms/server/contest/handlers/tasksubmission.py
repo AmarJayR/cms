@@ -451,7 +451,7 @@ class SubmissionStatusHandler(ContestHandler):
         elif data["status"] == SubmissionResult.SCORING:
             data["status_text"] = self._("Scoring...")
         elif data["status"] == SubmissionResult.SCORED:
-            data["status_text"] = "%s <a class=\"details\">%s</a>" % (
+            data["status_text"] = "%s <a class=\"details\" data-toggle=\"modal\" data-target=\"#submission_detail\">%s</a>" % (
                 self._("Evaluated"), self._("details"))
 
             score_type = get_score_type(dataset=task.active_dataset)
