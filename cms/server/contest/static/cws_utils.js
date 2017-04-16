@@ -77,7 +77,7 @@ CMS.CWSUtils.prototype.display_notification = function(type, timestamp,
 
     // TODO somehow display timestamp, subject and text
 
-    var alert = $('<div class="alert alert-dismissible" role="alert">' +
+    var alert = $('<div class="alert alert-dismissible" style="position: fixed; right: 20px; z-index: 500;" role="alert">' +
                   '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
                   '<h4 class="alert-heading"></h4>' +
                   '</div>');
@@ -86,6 +86,7 @@ CMS.CWSUtils.prototype.display_notification = function(type, timestamp,
         alert.children("h4").text($("#translation_new_message").text());
     } else if (type == "announcement") {
         alert.children("h4").text($("#translation_new_announcement").text());
+        alert.addClass("alert-info");
     } else if (type == "question") {
         alert.children("h4").text($("#translation_new_answer").text());
     } else if (type == "notification") {
@@ -98,7 +99,9 @@ CMS.CWSUtils.prototype.display_notification = function(type, timestamp,
         alert.addClass("alert-danger");
     } else if (level == "success") {
         alert.addClass("alert-success");
-    }
+    } else if (level == "warning") {
+        alert.addClass("alert-warning");
+    } 
 
     $("#notifications").prepend(alert);
 
