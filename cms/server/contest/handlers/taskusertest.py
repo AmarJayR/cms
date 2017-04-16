@@ -469,7 +469,7 @@ class UserTestStatusHandler(ContestHandler):
             data["status_text"] = self._("Compiling...")
         elif ur.compilation_failed():
             data["status"] = 2
-            data["status_text"] = "%s <a class=\"details\">%s</a>" % (
+            data["status_text"] = "%s <a class=\"details\" data-toggle=\"modal\" data-target=\"#submission_detail\">%s</a>" % (
                 self._("Compilation failed"), self._("details"))
         elif not ur.evaluated():
             data["status"] = 3
