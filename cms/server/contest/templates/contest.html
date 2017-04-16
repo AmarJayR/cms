@@ -118,7 +118,6 @@ $(document).ready(function () {
                 
                     {% if handler.get_argument("login_error", "") != "" %}
                         <div class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             {{ _("Failed to log in.") }}
                         </div>
                     {% end %}
